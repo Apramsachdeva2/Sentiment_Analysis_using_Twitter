@@ -30,7 +30,7 @@ The most popular is tweepy, which allows you to connect to the streaming API and
 To setup tweepy for start streaming data. The first thing we'll need to do is visit the Twitter Developer Center and create a developer account. This account will enable us to create credentials that let us authenticate with the Twitter Streaming API.
 
 After creating the account, we can go to the Application Console and create a new Twitter application. This will let us get credentials specific to the application, which will let us connect to the API.
-![Test Image 1](twitter_make_app.png)
+![Image 1](images/twitter_make_app.png)
 Once you create your application, you can click on the "Keys and Access Tokens" tab to get your credentials. You'll need to get the following from under "Application Settings":
 
 Consumer Key (API Key) — we'll refer to this as TWITTER_APP_KEY.
@@ -68,6 +68,6 @@ When using SQLite, if the database file doesn't exist, it will be automatically 
 For visualizing the sentiments expressed by various people using tweets we can use a pie chart to represent the amount of people feeling positive, negative or nuetral towards the topic.
 
 Matplotlib.pyplot can be used for plotting graphs in python and the data can be visualised as:
-![Test Image 1](modi.png)
+![Image 2](images/modi.png)
 
-![Test Image 1](rahul.png)
+![Image 3](images/rahul.png)
