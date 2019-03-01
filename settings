@@ -6,3 +6,5 @@ access_token_secret='Enter your access token secret'
 connection_URL="sqlite:///tweets.db" you may enter your URL for connecting the databse you've created
 keyword=["Narendra modi"] the keyword needs to be changed when the topic changes
 For ex: to stream tweets having rahul gandhi keyword should be changed to rahul gandhi
+table_name="Enter your table name here"
+csv_file="Enter file name for saving the tweets"
