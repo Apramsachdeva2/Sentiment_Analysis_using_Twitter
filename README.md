@@ -71,3 +71,5 @@ Matplotlib.pyplot can be used for plotting graphs in python and the data can be 
 ![Image 2](images/modi.png)
 
 ![Image 3](images/rahul.png)
+# Storing tweets in a csv file
+Tweets can be saved in a csv file for any further use to store the streamed tweets in the databse to a csv file db_to_csv.py can be used
