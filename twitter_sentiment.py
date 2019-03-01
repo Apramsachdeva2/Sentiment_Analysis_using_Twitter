@@ -55,7 +55,7 @@ class MyStreamListener(tweepy.StreamListener):
             label='positive'
             self.pos_score+=1
        
-        table=db['tweets']
+        table=db[settings.table_name]
         table.insert(dict(             #saving the streamed tweets in a database
                 user_location=loc,
                 tweet_text=text,
