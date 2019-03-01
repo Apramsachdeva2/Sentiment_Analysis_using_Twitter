@@ -1,0 +1,6 @@
+
+Following packages are required:
+TextBlob
+dataset
+tweepy
+matplotlib
