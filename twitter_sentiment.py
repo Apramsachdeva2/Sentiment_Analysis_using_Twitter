@@ -10,10 +10,10 @@ from textblob import TextBlob # library for processing textual data
 import dataset                #library for working with database
 
 #credentials that let us authenticate with the Twitter Streaming API.
-consumer_key='###############################'
-consumer_secret='#######################################'
-access_token='#############################################'
-access_token_secret='########################################'
+consumer_key=settings.consumer_key
+consumer_secret=settings.consumer_secret
+access_token=settings.access_token
+access_token_secret=settings.access_token_secret
 
 #authenticating with twitter that is logging in with code
 
@@ -25,7 +25,7 @@ api=tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 #this api variable will be used perform different oprations of twitter and to search for tweets
 #connecting to the database
-db=dataset.connect("sqlite:///tweets.db")
+db=dataset.connect(settings.connection_URL)
 # opening a Twitter stream using tweepy requires a user-defined listener class to  implement some custom logic.
 class MyStreamListener(tweepy.StreamListener):
     
@@ -61,7 +61,7 @@ class MyStreamListener(tweepy.StreamListener):
                 tweet_text=text,
                 sentiment=label))
         self.counter += 1
-        if self.counter < self.limit: #chicking that the time limit does not exceed
+        if self.counter < self.limit: #checking that the time limit does not exceed
             return True
         else:
             stream.disconnect()
@@ -75,7 +75,7 @@ stream_listener=MyStreamListener()
 #creating a stream for extracting tweets
 stream=tweepy.Stream(auth=api.auth,listener=stream_listener)
 #we want to collect tweets that contain a certain keyword filter is method of tweepy.Stream that allows us to do this
-stream.filter(track=["Narendra Modi"])
+stream.filter(track=keyword)
 #visualizing the collected data after analysis using a pie chart 
 val=[stream_listener.pos_score,stream_listener.neg_score,stream_listener.nuet_score]
 label=['positive','negative','nuetral']
